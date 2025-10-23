@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — EarthGuard Alliance</title>
+  <meta name="description" content="Contact EarthGuard Alliance to volunteer, partner, or learn more." />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="site-title">EarthGuard Alliance</h1>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container narrow">
+    <h2>Contact Us</h2>
+    <p>For volunteer signups, partnerships, or media requests, contact our team.</p>
+
+    <section aria-labelledby="contact-form">
+      <h3 id="contact-form">Send us a message</h3>
+
+      <!-- This form is non-functional without backend. For assignment it's fine.
+           You can change action to "mailto:youremail@example.com" or hook to a backend. -->
+      <form class="form-card" action="#" method="post" novalidate>
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <div class="form-actions">
+          <button class="btn" type="submit">Send message</button>
+          <button class="btn ghost" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="contact-details" aria-labelledby="details">
+      <h3 id="details">Other ways to reach us</h3>
+      <p>Email: <a href="mailto:earthguardalliance@gmail.com">earthguardalliance@gmail.com</a></p>
+      <p>Team: Paras Kapoor, [Add teammates]</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> EarthGuard Alliance</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

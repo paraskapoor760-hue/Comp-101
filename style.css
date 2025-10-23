@@ -1,0 +1,156 @@
+/* EarthGuard Alliance — style.css
+   Modern, responsive and accessible.
+   Place this file in the same folder as the HTML files.
+*/
+
+:root{
+  --brand:#026670;
+  --accent:#9fedd7;
+  --text:#222;
+  --muted:#667;
+  --bg:#f6fbfa;
+  --container:1100px;
+  --radius:8px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:1rem;
+}
+
+/* Skip link */
+.skip{
+  position:absolute;
+  left:-999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip:focus{
+  left:1rem;
+  top:1rem;
+  width:auto;
+  height:auto;
+  background:#fff;
+  padding:.5rem .75rem;
+  z-index:9999;
+  border-radius:4px;
+}
+
+/* Header */
+.site-header{
+  background:var(--brand);
+  color:#fff;
+}
+.header-inner{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+  padding:.75rem 1rem;
+}
+.brand{display:flex;align-items:center;gap:.6rem}
+.site-title{font-size:1.1rem;margin:0}
+.logo{width:42px;height:42px;object-fit:cover;border-radius:6px}
+
+/* Nav */
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.nav a{color:#fff;text-decoration:none;padding:.25rem .35rem;border-radius:4px}
+.nav a[aria-current="page"], .nav a:hover{background:rgba(255,255,255,0.08)}
+
+.nav-toggle{
+  display:none;
+  background:transparent;
+  color:#fff;
+  border:0;
+  font-size:1.1rem;
+}
+
+/* Hero */
+.hero{
+  background:linear-gradient(180deg, rgba(2,102,112,0.08), rgba(159,237,215,0.06));
+  padding:1.25rem;
+  border-bottom:1px solid rgba(0,0,0,0.04);
+}
+.hero-inner{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+  align-items:center;
+}
+.hero-img{width:100%;height:240px;object-fit:cover;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+.hero-text h2{margin-top:0;margin-bottom:.5rem}
+.cta-row{margin-top:1rem}
+.btn{
+  display:inline-block;
+  background:var(--brand);
+  color:#fff;
+  padding:.6rem .9rem;
+  border-radius:8px;
+  text-decoration:none;
+  border:0;
+  cursor:pointer;
+}
+.btn.ghost{background:transparent;border:1px solid var(--brand);color:var(--brand)}
+
+/* Features */
+.features{padding:1rem 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:#fff;padding:.8rem;border-radius:10px;box-shadow:0 6px 18px rgba(12,34,56,0.06)}
+.card-img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:.6rem}
+
+/* Small helpers */
+.narrow{max-width:800px;margin:0 auto}
+.form-card{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 8px 24px rgba(12,34,56,0.06)}
+.form-card label{display:block;margin-top:.6rem}
+.form-card input,.form-card textarea{width:100%;padding:.6rem;margin-top:.25rem;border:1px solid #e6eef0;border-radius:6px}
+.form-actions{margin-top:.8rem;display:flex;gap:.5rem}
+.inline-form{display:flex;gap:.5rem;align-items:center}
+.inline-form input{padding:.6rem;border:1px solid #e6eef0;border-radius:6px}
+
+/* Footer */
+.site-footer{background:#013b3a;color:#fff;padding:.8rem 0;margin-top:2rem}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.footer-nav ul{display:flex;gap:.75rem;list-style:none;padding:0;margin:0}
+.footer-nav a{color:#fff;text-decoration:none}
+
+/* Posts list */
+.posts-list{list-style:none;padding:0;margin:0}
+.post{background:#fff;padding:1rem;border-radius:8px;margin-bottom:1rem;box-shadow:0 8px 20px rgba(12,34,56,0.05)}
+.meta{color:var(--muted);font-size:.9rem}
+
+/* Team grid */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.team-card{background:#fff;padding:.6rem;border-radius:8px;text-align:center}
+.team-img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns: 1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .nav ul{display:none}
+  .nav.open ul{display:flex;flex-direction:column;background:transparent;padding:.5rem}
+  .nav-toggle{display:inline-block}
+  .grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr}
+  .header-inner{align-items:center}
+}
+
+/* Accessibility helpers */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

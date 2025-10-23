@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — EarthGuard Alliance</title>
+  <meta name="description" content="Latest posts from EarthGuard Alliance" />
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand"><h1 class="site-title">EarthGuard Blog</h1></div>
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="index.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Latest Posts</h2>
+    <ul class="posts-list">
+      <li class="post">
+        <a href="post1.html"><h3>The Hidden Life of Plastic Waste</h3></a>
+        <p class="meta">Oct 20, 2025 • By EarthGuard</p>
+        <p>Microplastics are everywhere — in the oceans, the air and even our food. This post explains how that happens and what it means.</p>
+      </li>
+
+      <li class="post">
+        <a href="post2.html"><h3>5 Ways You Can Help Today</h3></a>
+        <p class="meta">Oct 12, 2025 • By EarthGuard</p>
+        <p>Simple everyday actions that reduce waste and protect marine life. Practical tips you can start using now.</p>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> EarthGuard Alliance</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

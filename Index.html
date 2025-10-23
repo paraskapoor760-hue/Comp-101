@@ -1,32 +1,120 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>EarthGuard Alliance</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EarthGuard Alliance — Protecting Our Oceans</title>
+  <meta name="description" content="EarthGuard Alliance fights plastic pollution through education, cleanups and sustainable alternatives." />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>EarthGuard Alliance</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="blog/index.html">Blog</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/logo-placeholder.png" alt="" class="logo" aria-hidden="true">
+        <h1 class="site-title">EarthGuard Alliance</h1>
+      </div>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">
+        ☰ <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="primaryNav" class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <img src="images/ocean.jpg" alt="Ocean cleanup">
-    <h2>Protecting Our Oceans from Plastic Pollution</h2>
-  </section>
+  <main id="main" class="container">
+    <section class="hero">
+      <!-- Replace hero.jpg with your own image -->
+      <div class="hero-inner">
+        <img src="images/hero.jpg" alt="Volunteers cleaning a beach" class="hero-img">
+        <div class="hero-text">
+          <h2>Protecting Our Oceans from Plastic Pollution</h2>
+          <p>EarthGuard Alliance mobilizes communities, educates citizens, and champions solutions to reduce single-use plastic and restore marine ecosystems.</p>
+          <p class="cta-row">
+            <a class="btn" href="contact.html">Join a Cleanup</a>
+            <a class="btn ghost" href="blog/index.html">Read Our Blog</a>
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <section class="mission">
-    <h3>Our Mission</h3>
-    <p>We aim to reduce plastic waste and protect marine ecosystems through global awareness and community-driven action.</p>
-  </section>
+    <section class="features" aria-labelledby="why-title">
+      <h3 id="why-title">Why It Matters</h3>
+      <div class="grid">
+        <article class="card">
+          <img src="images/feature1.jpg" alt="Microplastics in water" class="card-img">
+          <h4>Microplastics Everywhere</h4>
+          <p>Microplastics enter food chains and harm wildlife. Small actions add up — and science shows progress is possible.</p>
+        </article>
 
-  <footer>
-    <p>© 2025 EarthGuard Alliance | Follow us on social media</p>
+        <article class="card">
+          <img src="images/feature2.jpg" alt="Community beach cleanup" class="card-img">
+          <h4>Community Action</h4>
+          <p>Local cleanups, education, and pressure on businesses reduce waste at the source — and build community pride.</p>
+        </article>
+
+        <article class="card">
+          <img src="images/team-paras.jpg" alt="Volunteers" class="card-img">
+          <h4>Policy & Partnerships</h4>
+          <p>We work with local governments and companies to push for better waste management and reusable alternatives.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mission" aria-labelledby="mission-title">
+      <h3 id="mission-title">Our Mission</h3>
+      <p>EarthGuard Alliance is dedicated to protecting marine life by reducing plastic waste through education, on-the-ground cleanups, and partnerships that drive sustainable change.</p>
+    </section>
+
+    <section class="newsletter" aria-labelledby="news-title">
+      <h3 id="news-title">Get Involved</h3>
+      <p>Sign up for updates, cleanup invites, and practical tips to reduce plastic in your daily life.</p>
+      <form class="inline-form" action="#" method="post" novalidate>
+        <label for="email" class="sr-only">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p><strong>EarthGuard Alliance</strong> — © <span id="year"></span></p>
+        <p>Based in Vancouver • Working globally</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </footer>
+
+  <script>
+    // Small JS for mobile nav and year (works without JS too)
+    (function(){
+      var btn = document.getElementById('navToggle');
+      var nav = document.getElementById('primaryNav');
+      btn.addEventListener('click', function(){
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('open');
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
